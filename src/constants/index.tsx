@@ -1,0 +1,11 @@
+export const ADD_STUDENT = 'ADD_STUDENT';
+export type ADD_STUDENT = typeof ADD_STUDENT;
+
+export const REMOVE_STUDENT = 'REMOVE_STUDENT';
+export type REMOVE_STUDENT = typeof REMOVE_STUDENT;
+
+export const EDIT_STUDENT_NAME = 'EDIT_STUDENT_NAME';
+export type EDIT_STUDENT_NAME = typeof EDIT_STUDENT_NAME;
+
+export const EDIT_STUDENT_SCORE = 'EDIT_STUDENT_SCORE';
+export type EDIT_STUDENT_SCORE = typeof EDIT_STUDENT_SCORE;
