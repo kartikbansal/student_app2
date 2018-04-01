@@ -1,12 +1,17 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Student, StoreState } from '../types';
 
-const ClassStatistics = (props) => {
-  const scoreArr = props.students.map(student => +student.score);
+interface Props {
+  students: Student[];
+};
+
+const ClassStatistics = (props: Props) => {
+  const scoreArr = props.students.map((student: Student) => +student.score);
   const max = Math.max(...scoreArr);
   const min = Math.min(...scoreArr);
-  const average = scoreArr.reduce((a,b) => a + b, 0) / scoreArr.length;
+  const average = scoreArr.reduce((a: number, b: number) => a + b, 0) / scoreArr.length;
   return (
     <div className="box container fig-box ">
       <div className="wrapper">
@@ -22,7 +27,7 @@ const ClassStatistics = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: StoreState): { students: Student[] } => {
   return {
     students: state.students
   }

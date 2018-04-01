@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/react-redux": "^5.0.15",
     "@types/react-router-dom": "^4.2.6",
+    "@types/uuid": "^3.4.3",
     "autoprefixer": "7.1.6",
     "babel-jest": "^22.1.0",
     "babel-loader": "^7.1.2",

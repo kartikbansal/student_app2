@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { titleCase } from '../utils/helpers.js';
 import { editStudentName, editStudentScore } from '../actions/students.js';
 
-class InputInlineEdit extends Component {
+interface Props {
+  inputValueType: string;
+  id: string;
+  value: string;
+  dispatch: any;
+}
+
+class InputInlineEdit extends React.Component<Props> {
 
   state = {
     isEditing: false,
@@ -27,7 +34,7 @@ class InputInlineEdit extends Component {
     this.submitUpdatedInput();
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: any) => {
     if(e.keyCode === 27) {
       this.setState(() => ({ isEditing: false }));
     } else if(e.keyCode === 13) {
@@ -35,7 +42,7 @@ class InputInlineEdit extends Component {
     }
   }
 
-  updateInput = (inputValue) => {
+  updateInput = (inputValue: string) => {
     const { inputValueType } = this.props;
     if(inputValueType === 'name') {
       if(!inputValue || inputValue.match(/^[A-Za-z][a-zA-Z\s]*$/))
@@ -46,7 +53,7 @@ class InputInlineEdit extends Component {
     }
   }
 
-  handleChange = (e) => {
+  handleChange = (e: any) => {
     const inputValue = e.target.value;
     this.updateInput(inputValue);
   }

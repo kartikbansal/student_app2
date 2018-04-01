@@ -16,7 +16,7 @@ interface Props {
 
 
 const StudentListItem = (props: Props) => (
-  <div className="table__row" {/** @type {{search: React.CSSProperties}} */} style={+props.score < 65 ? styles : null }>
+  <div className="table__row" style={+props.score < 65 ? styles : null }>
     <div className="table__item">{props.index+1}.</div>
     <InputInlineEdit inputValueType="name" id={props.id} value={props.fullName} />
     <InputInlineEdit inputValueType="score" id={props.id} value={props.score} />

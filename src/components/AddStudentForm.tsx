@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 // import { edruxForm, Field } from 'redux-form';
-import uuid from "uuid";
+import * as uuid from "uuid";
 import { titleCase } from '../utils/helpers.js';
 import { addStudent } from '../actions/students.js';
 
@@ -104,15 +104,15 @@ import { addStudent } from '../actions/students.js';
 
 
 
-class AddStudentForm extends Component {
+class AddStudentForm extends React.Component {
   state = {
     name: '',
     score: '',
     error: ''
   }
 
-  handleNameChange = (e) => {
-    const name = e.target.value;
+  handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const name = (<HTMLInputElement>e.target).value;
     if(!name || name.match(/^[a-zA-Z][a-zA-Z\s]*$/))
       this.setState(() => ({ name }));
   }
